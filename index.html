@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sockets</title>
+</head>
+<body>
+<script>
+    const ws = new WebSocket("ws://localhost:8082")
+
+    ws.addEventListener("open", () => {
+        console.log("We are connected");
+
+        ws.send("Hey wats up?")
+
+    })
+
+    ws.addEventListener("message", (e) => {
+        console.log(e);
+    })
+</script>
+</body>
+</html>
